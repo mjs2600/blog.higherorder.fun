@@ -29,7 +29,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
-    "typeface-merriweather": "0.0.72",
+    "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
