@@ -3,7 +3,7 @@ module.exports = {
     title: `Higher-Order Fun`,
     author: {
       name: `Michael Simpson`,
-      summary: `A data scientist in Vermont.`,
+      summary: `a data scientist in Vermont.`,
     },
     description: `My personal blog.`,
     siteUrl: `https://blog.higherorder.fun/`,
