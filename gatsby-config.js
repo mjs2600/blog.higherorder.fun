@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Higher-Order Fun`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Michael Simpson`,
+      summary: `A data scientist in Vermont.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `My personal blog.`,
+    siteUrl: `https://blog.higherorder.fun/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `mjs2600`,
     },
   },
   plugins: [
