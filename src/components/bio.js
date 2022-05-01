@@ -22,7 +22,7 @@ const Bio = () => {
           }
           social {
             twitter
-            mastodon
+            mastodon {
               server
               handle
             }
