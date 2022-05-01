@@ -8,8 +8,6 @@
 import * as React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faMastodon, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,13 +18,6 @@ const Bio = () => {
             name
             summary
           }
-          social {
-            twitter
-            mastodon {
-              server
-              handle
-            }
-          }
         }
       }
     }
@@ -34,7 +25,6 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
 
   return (
     <div className="bio">
@@ -50,21 +40,11 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}.
+          Written by <strong>{author.name}</strong> {author?.summary || null}
+          <br />
         </p>
       )}
-      <p>
-        Follow me:
-        {` `}
-        <a href={`https://twitter.com/${social?.twitter || ``}`}>
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
-        <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
-          <FontAwesomeIcon icon={faMastodon} />
-        </a>
-        .
-      </p>
-    </div>
+    </div >
   )
 }
 

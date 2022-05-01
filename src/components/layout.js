@@ -1,7 +1,32 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import {useStaticQuery, graphql, Link} from "gatsby"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faMastodon, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({location, title, children}) => {
+  const data = useStaticQuery(graphql`
+    query SocialQuery {
+      site {
+        siteMetadata {
+          author {
+            name
+          }
+          social {
+            twitter
+            mastodon {
+              server
+              handle
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // Set these values by editing "siteMetadata" in gatsby-config.js
+  const social = data.site.siteMetadata?.social
+  const author = data.site.siteMetadata?.author
+
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -25,9 +50,15 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()} {author.name} -
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        Follow me: {` `}
+        <a href={`https://twitter.com/${social?.twitter || ``}`}>
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
+        <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
+          <FontAwesomeIcon icon={faMastodon} />
+        </a>
       </footer>
     </div>
   )

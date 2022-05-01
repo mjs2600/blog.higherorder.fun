@@ -1,7 +1,6 @@
 ---
 title: Hello World
 date: "2022-05-01T16:03:12Z"
-description: "Hello, World!"
 ---
 
 Welcome to my new blog!
