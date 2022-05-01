@@ -8,6 +8,8 @@
 import * as React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faMastodon, faTwitter} from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,6 +22,10 @@ const Bio = () => {
           }
           social {
             twitter
+            mastodon
+              server
+              handle
+            }
           }
         }
       }
@@ -46,13 +52,12 @@ const Bio = () => {
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
-          You should follow them on
+          Follow me:
           <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            Twitter
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
-          or
-          <a rel="me" href="https://social.higherorder.fun/@michael">
-            Mastodon
+          <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
+            <FontAwesomeIcon icon={faMastodon} />
           </a>
           .
         </p>

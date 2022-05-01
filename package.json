@@ -8,6 +8,10 @@
     "url": "https://github.com/mjs2600/blog.higherorder.fun/issues"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "gatsby": "^4.13.1",
     "gatsby-plugin-feed": "^4.13.0",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
