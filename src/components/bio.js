@@ -50,18 +50,20 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          Follow me:
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-          <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
-            <FontAwesomeIcon icon={faMastodon} />
-          </a>
-          .
+          Written by <strong>{author.name}</strong> {author?.summary || null}.
         </p>
       )}
+      <p>
+        Follow me:
+        {` `}
+        <a href={`https://twitter.com/${social?.twitter || ``}`}>
+          <FontAwesomeIcon icon={faTwitter} />
+        </a>
+        <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
+          <FontAwesomeIcon icon={faMastodon} />
+        </a>
+        .
+      </p>
     </div>
   )
 }
