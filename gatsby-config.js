@@ -53,6 +53,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-published`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
@@ -126,27 +127,6 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: "gatsby-plugin-published",
-      // Default values for options
-      options: {
-        // Field name on frontmatter to get the published date
-        frontmatterDateFieldName: "date",
-        // Field name on frontmatter to get the draft state (boolean)
-        // Node is considered a draft if value is true
-        frontmatterDraftFieldName: "draft",
-        // Field name to add into node fields to set the visible state
-        visibleFieldName: "visible",
-        // Field name to add into node fields to set the published state
-        publishedFieldName: "published",
-        // Timezone for comparing dates
-        timezone: "UTC",
-        // Force draft nodes to be visible
-        makeDraftVisible: false,
-        // Valid nodes, any node type not in this list will be ignored
-        validNodes: ["MarkdownRemark", "Mdx"]
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({data, location}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMarkdownRemark.nodes.filter(post => post.published)
 
   if (posts.length === 0) {
     return (
@@ -72,10 +72,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { visible: { eq: true } } }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
+          published
           slug
         }
         frontmatter {
