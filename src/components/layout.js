@@ -1,9 +1,9 @@
 import * as React from "react"
-import {useStaticQuery, graphql, Link} from "gatsby"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faMastodon, faTwitter} from '@fortawesome/free-brands-svg-icons'
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMastodon, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
-const Layout = ({location, title, children}) => {
+const Layout = ({ location, title, children }) => {
   const data = useStaticQuery(graphql`
     query SocialQuery {
       site {
@@ -50,13 +50,15 @@ const Layout = ({location, title, children}) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()} {author.name} -
-        {` `}
+        © {new Date().getFullYear()} {author.name} -{` `}
         Follow me: {` `}
         <a href={`https://twitter.com/${social?.twitter || ``}`}>
           <FontAwesomeIcon icon={faTwitter} />
         </a>
-        <a rel="me" href={`https://${social.mastodon.server}/${social.mastodon.handle}`}>
+        <a
+          rel="me"
+          href={`https://${social.mastodon.server}/${social.mastodon.handle}`}
+        >
           <FontAwesomeIcon icon={faMastodon} />
         </a>
       </footer>

@@ -4,7 +4,6 @@ date: "2022-08-30T14:27:00Z"
 draft: true
 ---
 
-
 ```python
 import torch
 from torch.jit import trace
@@ -22,13 +21,13 @@ $ cargo new torchscripters
      Created binary (application) `torchscripters` package
 ```
 
-
 ```toml
 [dependencies]
 tch = "0.7.2"
 ```
 
 ```rust
+
 ```
 
 ```toml
