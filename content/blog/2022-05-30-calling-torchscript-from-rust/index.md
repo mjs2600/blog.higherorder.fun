@@ -1,6 +1,6 @@
 ---
 title: Calling TorchScript from Rust
-date: "2022-05-30T14:27:00Z"
+date: "2022-08-30T14:27:00Z"
 draft: true
 ---
 
