@@ -14,7 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "gatsby": "^4.16.0",
     "gatsby-plugin-feed": "^4.15.1",
-    "gatsby-plugin-gatsby-cloud": "^4.15.0",
+    "gatsby-plugin-gatsby-cloud": "^4.16.0",
     "gatsby-plugin-google-analytics": "^4.16.0",
     "gatsby-plugin-image": "^2.15.1",
     "gatsby-plugin-manifest": "^4.16.0",
