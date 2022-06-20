@@ -1,11 +1,11 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import {Link, graphql} from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({data, location}) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol style={{listStyle: `none`}}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: { frontmatter: { visible: { eq: true } } }) {
       nodes {
         excerpt
         fields {
