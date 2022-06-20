@@ -129,6 +129,27 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-published",
+      // Default values for options
+      options: {
+        // Field name on frontmatter to get the published date
+        frontmatterDateFieldName: "date",
+        // Field name on frontmatter to get the draft state (boolean)
+        // Node is considered a draft if value is true
+        frontmatterDraftFieldName: "draft",
+        // Field name to add into node fields to set the visible state
+        visibleFieldName: "visible",
+        // Field name to add into node fields to set the published state
+        publishedFieldName: "published",
+        // Timezone for comparing dates
+        timezone: "UTC",
+        // Force draft nodes to be visible
+        makeDraftVisible: false,
+        // Valid nodes, any node type not in this list will be ignored
+        validNodes: ["MarkdownRemark", "Mdx"]
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
