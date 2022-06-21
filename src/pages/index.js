@@ -73,7 +73,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }
-      filter: {fields: { published: {eq: true}}}) {
+      filter: {fields: { visible: {eq: true}}}) {
       nodes {
         excerpt
         fields {
