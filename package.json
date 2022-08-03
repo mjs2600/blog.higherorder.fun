@@ -13,7 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "gatsby": "^4.20.0",
-    "gatsby-plugin-feed": "^4.19.0",
+    "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-gatsby-cloud": "^4.20.0",
     "gatsby-plugin-google-analytics": "^4.19.0",
     "gatsby-plugin-image": "^2.19.0",
