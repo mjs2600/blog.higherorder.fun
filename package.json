@@ -20,7 +20,7 @@
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-offline": "^5.20.0",
     "gatsby-plugin-published": "^1.0.1",
-    "gatsby-plugin-react-helmet": "^5.20.0",
+    "gatsby-plugin-react-helmet": "^5.21.0",
     "gatsby-plugin-sharp": "^4.20.0",
     "gatsby-remark-copy-linked-files": "^5.20.0",
     "gatsby-remark-images": "^6.21.0",
