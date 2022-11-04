@@ -10,8 +10,8 @@ module.exports = {
     social: {
       twitter: `mjs2600`,
       mastodon: {
-        server: `social.higherorder.fun`,
-        handle: `@michael`,
+        server: `fosstodon.org`,
+        handle: `@naivebayesian`,
       },
     },
   },
@@ -79,14 +79,14 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({query: {site, allMarkdownRemark}}) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{"content:encoded": node.html}],
                 })
               })
             },
