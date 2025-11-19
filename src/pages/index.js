@@ -72,8 +72,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }
-      filter: {fields: { visible: {eq: true}}}) {
+    allMarkdownRemark(
+      filter: { fields: { visible: { eq: true } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         excerpt
         fields {

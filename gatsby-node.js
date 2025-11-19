@@ -8,24 +8,23 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
   // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          filter: { fields: { visible: { eq: true }}}
-          limit: 1000
-        ) {
-          nodes {
-            id
-            fields {
-              slug
+    const result = await graphql(
+      `
+        {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: ASC }
+            limit: 1000
+          ) {
+            nodes {
+              id
+              fields {
+                slug
+              }
             }
           }
         }
-      }
-    `
-  )
+      `
+    )
 
   if (result.errors) {
     reporter.panicOnBuild(
@@ -64,12 +63,23 @@ exports.onCreateNode = ({node, actions, getNode}) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({node, getNode})
-
     createNodeField({
       name: `slug`,
       node,
       value,
     })
+
+    // Determine visibility: not a draft and not future-dated
+    const isDraft = node.frontmatter.draft === true;
+    const postDate = node.frontmatter.date ? new Date(node.frontmatter.date) : null;
+    const now = new Date();
+    const isFuture = postDate && postDate > now;
+    const visible = !isDraft && !isFuture;
+    createNodeField({
+      name: `visible`,
+      node,
+      value: visible,
+    });
   }
 }
 
@@ -111,6 +121,7 @@ exports.createSchemaCustomization = ({actions}) => {
 
     type Fields {
       slug: String
+      visible: Boolean
     }
   `)
 }
