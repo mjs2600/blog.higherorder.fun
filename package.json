@@ -18,7 +18,7 @@
     "gatsby-plugin-google-analytics": "^5.15.0",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.16.0",
-    "gatsby-plugin-offline": "^6.15.0",
+    "gatsby-plugin-offline": "^6.16.0",
     "gatsby-plugin-react-helmet": "^6.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-remark-copy-linked-files": "^6.16.0",
